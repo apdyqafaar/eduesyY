@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="old_edit_model">
+            <div class="edit_model" >
+                <i class="fa-solid fa-x fa-xx" style="position: absolute; right: 0px; top: 0px; font-size: 1.3rem; font-weight: 900; cursor: pointer;"></i>
+                <!-- <img src="" alt="" id="model_img" style="border-radius: 10px;">
+                  -->
+                  <div class="model_input">
+                    <img src=" "class="img Techer_img"  style="border-radius: 10px; width: 150px; height: 150px;" id="img" >
+                    <input type="file" id="designation" placeholder="img">
+                </div>
+                <div class="label">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="model_name" for="name">
+                   </div>
+                <div style="display: flex; gap: 10px; align-items: center; width: 100%;" class="selectors">
+                   <div class="label">
+                    <label for="Email">Email</label>
+                    <input type="email" id="model_email" for="Email">
+                   </div>
+                    <select id="mode_grade">
+                        <option selected>Select class</option>
+                        <option>Grade 1</option>
+                        <option>Grade 2</option>
+                        <option>Grade 3</option>
+                        <option>Grade 4</option>
+                        <option>Grade 5</option>
+                        <option>Grade 6</option>
+                        <option>Grade 7</option>
+                        <option>Grade 8</option>
+                        <option>Grade 9</option>
+                        <option>Grade 10</option>
+                        <option>Grade 11</option>
+                        <option>Grade 12</option>
+                    </select>
+                    <select id="model_gender">
+                        <option value="male">male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="label">
+                    <label for="password">password</label>
+                    <input type="text" id="model_password" for="password">
+                   </div>
+                   <div style="display: flex; gap: 20px; align-items: self-start; flex-wrap: wrap;">
+                    <label for="Access" id="Access"></label>
+                    <input type="checkbox" id="model_Access" for="Access" value="off">
+                   </div>
+                  <div id="student_progress_container">
+                    <!-- <span>Student progress is <input type="text" id="student_progress" style="border: none; background: #ddd; font-size: 1rem; width: 100px;"></span> -->
+                  </div>
+                
+                <button class="save">save</button>
+            </div>
+        </div>
+
+
+        <div class="old_reports_model">
+            <div class="model_repots">
+              <i
+                class="fa-solid fa-x fa-xx"
+                style="
+                  position: absolute;
+                  right: 0px;
+                  top: 0px;
+                  font-size: 1.3rem;
+                  font-weight: 900;
+                  cursor: pointer;
+                "
+              ></i>
+              <!-- <img src="" alt="" id="model_img" style="border-radius: 10px;">
+                      -->
+              <div class="model_input" >
+               <div style="height: 100%;">
+               <div style="display: flex; gap: 2rem;">
+                <img
+                src=" "
+                class="img Techer_img"
+                style="border-radius: 10px; width: 150px; height: 150px"
+                id="img_repot" />
+               <div style="display: flex;flex-direction: column; gap: 10px;">
+                <span class="type_of_repot" style="color: rgb(27, 153, 196); font-weight: 6000; "></span>
+                <span class="class" style="color: #444; font-weight: 6000; "></span>
+                <span class="name_r" style="color: #444; font-weight: 6000; "></span>
+    
+               </div>
+               </div>
+             
+                <br>
+              <p class="report_text"  style="margin-bottom: 80% !important;"></p>
+    
+    
+              
+              
+            </div>
+               </div>
+              
+              </div>
+    
+             
+            </div>
+        <!-- mobile menu -->
+        <div class="menu-toggle">
+            <i id="bar-btn" class="fas fa-bars"></i>
+            <i id="close-btn" class="fa-solid fa-xmark"></i>
+        </div>
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="logo-section">
+                <img src="IMG_0218.JPG" alt="logo" class="admin_img">
+                <h2 class="admin_Name">School Admin Dashboard</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item" id="dashboard">
+                    <a href="#" onclick="setActiveMenuItem('dashboard')"><i class="fa-solid fa-house"></i> Dashboard</a>
+                </div>
+
+                <div class="menu-item" id="teachers">
+                    <a href="#" onclick="setActiveMenuItem('teachers')"><i class="fas fa-user-graduate"></i>
+                        Teachers</a>
+                </div>
+
+                <div class="menu-item" id="students">
+                    <a href="#" onclick="setActiveMenuItem('students')"><i class="fa-solid fa-graduation-cap"></i>
+                        Students </a>
+                </div>
+                <div class="menu-item report_section" id="billing" >
+                    <a href="#" onclick="setActiveMenuItem('billing')"><i class="fa-solid fa-credit-card"></i>
+                        reports</a>
+                </div>
+                <!-- <div class="menu-item" id="settings">
+                    <a href="#" onclick="setActiveMenuItem('settings')"><i class="fas fa-gear"></i> Settings and
+                        Profile</a>
+                </div> -->
+                <!-- <div class="menu-item" id="exams">
+                    <a href="#" onclick="setActiveMenuItem('exams')"><i class="fa-solid fa-clipboard"></i> Exams</a>
+                </div> -->
+            </div>
+        </div>
+        <div class="rigt_sections">
+                  <!-- sidebar wllkis -->
+        <div class="main-content" id="main-content">
+
+            <div class="header">
+                <p class="hide">Learn how to launch faster <br> watch our webinar for tips from our experts and get a limited time offer.</p>
+                 <button class="logout">Log out</button>
+            </div>
+
+            <div class="welcome-section">
+                <h1 >Welcome to your dashboard, Udemy school</h1>
+                <p>Uyo/school/@teachable.com</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="text">
+                        <h3>Add other admins</h3>
+                        <p>Create rich course content and coaching products for your students. When you give them a
+                            pricing plan, they’ll appear on your site!</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="text">
+                        <h3>Add classes</h3>
+                        <p>Create rich course content and coaching products for your students. When you give them a
+                            pricing plan, they’ll appear on your site!</p>
+                    </div>
+                </div>
+
+                <div class="feature-item" id="main-add">
+                    <div class="icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="text">
+                        <h3>Add students</h3>
+                        <p>Create rich course content and coaching products for your students. When you give them a
+                            pricing plan, they’ll appear on your site!</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- teacher  side  -->
+        <div class="teachers-screen" id="teachers-screen" style="display: none; position: relative;">
+            
+            <!-- qaybta kor  teacher ka -->
+            <div class="logout">
+                <i class="fa-regular fa-bell"></i>
+                <button class="logout bax ">Log out</button>
+            </div>
+            <header>
+                <div class="header-left">
+                    <h1>Teachers</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn">Export CSV</button>
+                    <button class="btn add">Add Teachers</button>
+
+                </div>
+            </header>
+
+
+            <div class="content">
+                <div class="filter">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search for  name or email">
+                </div>
+                <div class="no-teachers">
+                    <p>No Teachers at this time</p>
+                    <p>Teachers will appear here after they enroll in your school.</p>
+                </div>
+            </div>
+
+
+            <!-- qaybta foorm ka  -->
+
+            <div class="form-container" style="display: none;">
+
+                <div class="add-teachers">
+                    <h1>Add Teachers</h1>
+                    <div class="designation-input">
+                        <img src=" "class="Techer_img" width="100px" height="100px" style="border-radius: 50%; padding: 3px;">
+                        <input type="file" id="designation" placeholder="img">
+                    </div>
+                </div>
+
+
+                <div class="tabs">
+                    <h2 class="tab active">Manually</h2>
+                    <h2 class="tab">Import CSV</h2>
+                </div>
+
+                <form class="teacher-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" placeholder="Enter full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Class</label>
+                            <select id="class">
+                                <option selected>Select class</option>
+                                <option>Grade 1</option>
+                                <option>Grade 2</option>
+                                <option>Grade 3</option>
+                                <option>Grade 4</option>
+                                <option>Grade 5</option>
+                                <option>Grade 6</option>
+                                <option>Grade 7</option>
+                                <option>Grade 8</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender">
+                                <option>Select gender</option>
+                                <option>male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Acess for Add-student</label>
+                            <select id="add-student">
+                                <option>yes</option>
+                                <option>no</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="text" id="phone" placeholder="Enter phone number">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter subject">
+                    </div>
+
+                    <div class="form-actions">
+                        <!-- <button type="button" class="add-another">➕ Add another</button> -->
+                        <button type="submit" class="add-teacher">Add Teacher</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- qaybta liiska macalimiinta -->
+
+            <div class="teacher-table" style="display: flex;
+            flex-direction: column; width: 100%; display: none;">
+            
+                    <div class="trr">
+                        <div class="space">Name</div>
+                        <div class='responsive'>Subject</div>
+                        <div >Class</div>
+                        <div class='responsive'>Email address</div>
+                        <div class='responsive'>Gender</div>
+                        <div>Actions</div>
+                    </div>
+                <!-- <tbody id="teacherList">
+                    New rows will be added here dynamically
+                     
+                </tbody> -->
+                <div id="teacherList">
+                    <!-- New rows will be added here dynamically -->
+                    <!-- <div class="div" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                        New rows will be added here dynamically
+    
+                    </div> -->
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Student Side -->
+        <div class="student-screen" id="student-screen" style="display: none;"> 
+            <div class="logout">
+                <i class="fa-regular fa-bell"></i>
+                <button class="bax">Log out</button>
+            </div>
+            <header>
+                <div class="header-left">
+                    <h1>Students</h1>
+                   
+                </div>
+                <div class="header-right">
+                    <button class="btn">Export CSV</button>
+                    <button class="btn add" id="addStudentBtn">Add Students</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="filter">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="studentSearchInput" placeholder="Search for name or email">
+                </div>
+                <div class="no-students no-teachers " style="display: none;">
+                    <p>No Students at this time</p>
+                    <p>Students will appear here after they enroll in your school.</p>
+                </div>
+            </div>
+
+            <!-- Form for adding students -->
+            <div class="form-container" id="studentFormContainer" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items:center; flex-wrap: wrap;">
+                    <h1>Add Students</h1>
+                    <div class="designation-input">
+                        <img src=" "class="Techer_img" width="100px" height="100px" style="border-radius: 50%; padding: 3px;">
+                        <input type="file" id="designation" placeholder="img">
+                    </div>
+                </div>
+                <form class="student-form" id="studentForm" >
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="studentName">Full Name:</label>
+                        <input type="text" id="studentName" placeholder="Enter student name" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="studentClass">Class:</label>
+                        <select id="studentClass" required>
+                            <option value="">Select class</option>
+                            <option>Grade 1</option>
+                            <option>Grade 2</option>
+                            <option>Grade 3</option>
+                            <option>Grade 4</option>
+                            <option>Grade 5</option>
+                            <option>Grade 6</option>
+                            <option>Grade 7</option>
+                            <option>Grade 8</option>
+                            <option>Grade 9</option>
+                            <option>Grade 10</option>
+                            <option>Grade 11</option>
+                            <option>Grade 12</option>
+                        </select>
+                    </div>
+                    
+                        <div class="form-group">
+                            
+                            <label for="studentGender">Gender:</label>
+                            <select id="studentGender" required>
+                                <option value="">Select gender</option>
+                                <option value="male">male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentEmail">Email address:</label>
+                            <input type="email" id="studentEmail" placeholder="Enter email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentPhone">Phone number:</label>
+                            <input type="tel" id="studentPhone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-group password">
+                        <label for="studentPassword">Password:</label>
+                        <input type="password" id="studentPassword" placeholder="Enter password" required>
+                    </div>
+            
+                    <div class="form-actions">
+                        <button type="submit" class="add-student">Add Student</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Table for displaying students -->
+            <div class="student-table" id="studentTable" style="  display: flex; flex-direction: column; display: none;">
+               
+                    <div class="trr2" style="">
+                        <div class="space">Name</div>
+                        <div class='responsive'>Email address</div>
+                        <div>Class</div>
+                        <div class='responsive'>Gender</div>
+                        <div>actions</div>
+                    </div>
+               
+                     <!-- New rows will be added here dynamically -->
+                <div class="studentList" style="display: flex; flex-direction: column; gap: 40px !important;">
+
+                </div>
+            </div>
+
+
+            
+        </div>
+
+
+        <section class="reports" style="display: none; padding: 4rem 0; display: flex; flex-direction: column; gap: 2rem;">
+            <h1 style="margin: 2rem 0;">See All repots of teahers and students both</h1>
+            <div class="repost_container" style="width: min(100%,900px);">
+                <!-- <div class="colom">
+                  <img
+                    src=""
+                    alt="img"
+                    height="50px"
+                    width="50px"
+                  />
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officia nobis sunt fugit voluptatibus dignissimos Lorem
+                    ipsum dolor sit amet.
+                  </p>
+                </div> -->
+                
+             
+              </div>
+        </section>
+        </div>
+
+          
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

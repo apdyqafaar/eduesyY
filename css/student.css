@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fdfbfa;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+
+}
+.left_side_active{
+    background: #519cda;
+}
+.container .right_side{
+    grid-column:2 /span6 ;
+   height: auto;
+   padding: 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.container .left_side{
+    background: #152358;
+    height: 100vh;
+   /* padding: 25px; */
+   color: white;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  position: sticky;
+  left: 0 ;
+  top: 0;
+}
+.logo{
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #cccc;
+    margin-top: 1.66rem;
+}
+.logo img{
+    width: 80px;
+    
+}
+.actions{
+    margin: 2rem 0;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.actions li{
+    padding:10px;
+    /* background: #519cda; */
+    display: flex;
+    gap: 10px;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.container .right_side header  .top{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.container .right_side header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: end;
+      padding: 20px 0;
+      /* position: sticky;
+      top: 0; */
+      /* left: 0; */
+      /* right: 0; */
+}
+
+.lagput_notivication{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+.lagput_notivication i{
+    position: relative;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+.lagput_notivication button{
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    color: #aaa;
+    cursor: pointer;
+}
+.color{
+    margin-top: -20px;
+    margin-left: 10px;
+    position: absolute;
+    background: #519cda;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+}
+
+
+.humberger{
+    display: none;
+}
+.mobile{
+    display: none;
+    transition: .5s;
+
+}
+.maydata{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.maydata img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.maydata ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    list-style: none;
+    font-size: 1.44rem;
+}
+.StudentData{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.progress{
+    width: min(100%, 900px);
+    height: 20px;
+    border-radius:7px;
+    background: #ccc;
+}
+.progress_bar, .progress_bar_school{
+    background: #519cda;
+    height: 100%;
+    width: 80%;
+    border-radius: 7px;
+    /* margin-bottom: -20px; */
+}
+.progress_bar_school{
+    /* margin-top: -20px; */
+    background: #4fd120;
+}
+.bbb{
+    margin-top: 30px;
+    margin-bottom: -15px;
+}
+
+   .repots{
+    display: none;
+   }
+   .progres_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+   }
+   .progres_container p{
+    font-size: 1.3rem;
+   }
+   /* .StudentData{
+    display: none;
+   } */
+  .repots h2{
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #666;
+  }
+  .repots form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .repots form{
+    width: min(100%,700px);
+  }
+  .repots form textarea{
+    height: 300px;
+    padding: 10px;
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    border: 1px solid #cccc;
+    outline: none;
+  }
+  .repots form button{
+    background: #519cda;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+  }
+  .repots form button:hover{
+    background: #516cda;
+  }
+@media (max-width:1430px){
+    .edit-T{
+        right: 0%;
+    }
+}
+@media (max-width:1230px){
+    .maydata .content{
+        font-size: 1.33rem;
+    }
+    .teacherName, .teacherEmail, .teacherPassword, .teacherClass, .teacherPhone{
+        font-size: 1.44rem;
+    }
+    .maydata img{
+        width: 400px;
+        height: 400px;
+        border-radius: 6px;
+        /* margin: 4rem 0; */
+       
+    }
+    .Add_new_student form .top{
+        gap: 10px;
+    }
+   
+}
+@media (max-width:930px){
+    .maydata{
+        display: flex;
+        flex-direction: column;
+        /* gap: ; */
+        padding-bottom:5rem ;
+    }
+    .edit-T{
+        right: 0%;
+        left: 0;
+    }
+}
+@media (max-width:900px){
+  .left_side{
+    position: relative;
+    display: none !important;
+    /* padding: 2rem; */
+  }
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.humberger{
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.mobile{
+    display: none;
+    position: fixed;
+    left: 0;
+    top:0 ;
+    bottom: 0;
+    background:#152358;
+    color: white;
+    z-index: 1;
+    width: 40%;
+    transition: .5s;
+}
+.mobile-activeness{
+    display: block;
+    transition: .5s;
+
+}
+.top_table, .student_data{
+    font-size: 13px;
+    padding: 20 0;
+     gap: 5px;
+}
+.student_data img{
+    width: 40px;
+    height: 40px;
+}
+
+.container {
+    padding:  10px;
+}
+.container .right_side{
+    padding:27px 0;
+}
+.Email, .phone, .name, .Password{
+    width: min(100%, 400px) !important;
+      
+   }
+   .Add_new_student{
+   padding: 5px;
+}
+.Add_new_student h1{
+    font-size: 2rem;
+}
+.Add_new_student span{
+    font-size: 1.3rem;
+    gap: 10px;
+}
+
+}
+

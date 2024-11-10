@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Account Creation</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="container" id="account-creation-container">
+        <h1 class="title">Welcome, create your school account</h1>
+        <div class="form-box" id="form-box">
+            <p class="welcome-message">It is our great pleasure to have you on board!</p>
+            <form id="account-form">
+                <input type="text" id="admin-name" class="input-field" placeholder="Enter the name of admin" required>
+                <input type="text" id="school-name" class="input-field" placeholder="Enter the name of school" required>
+                <input type="password" id="password" class="input-field" placeholder="Enter your password" required>
+                <div class="div2" style="display: flex; flex-direction: column; gap: 10px; justify-content: center; align-items: center;">
+                    <img src="" alt="" style="width: 60px; height: 60px; border-radius: 50%;" class="admin_img">
+                    <input type="file" placeholder="Choose Img" id="designation">
+                </div>
+                <button type="submit" class="submit-button">Next</button>
+            </form>
+            <p class="existing-account">Already have an account? <a href="../index.html">Sign in</a></p>
+        </div>
+    </div>
+
+    <script src="../js/register.js">
+    
+    </script>
+</body>
+</html>
